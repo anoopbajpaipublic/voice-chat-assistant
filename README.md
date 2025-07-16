@@ -1,6 +1,6 @@
 # 🎤 Voice Chat Assistant
 
-React frontend for the [PDF Chatbot](https://github.com/your-org/pdf-chatbot) backend. It allows users to chat with a PDF-based AI using both **text input** and **voice commands**, and the AI responds with both **text and speech** via OpenAI's TTS.
+React frontend for the [PDF Chatbot](https://github.com/anoopbajpaipublic/pdf-chatbot) backend. It allows users to chat with a PDF-based AI using both **text input** and **voice commands**, and the AI responds with both **text and speech** via OpenAI's TTS.
 
 ---
 
