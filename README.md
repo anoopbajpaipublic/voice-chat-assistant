@@ -1,46 +1,86 @@
-# Getting Started with Create React App
+# 🎤 Voice Chat Assistant
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React frontend for the [PDF Chatbot](https://github.com/your-org/pdf-chatbot) backend. It allows users to chat with a PDF-based AI using both **text input** and **voice commands**, and the AI responds with both **text and speech** via OpenAI's TTS.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## ✨ Features
 
-### `npm start`
+- 🎙️ Voice-enabled interface using Web Speech API
+- 🧠 Queries answered from the PDF content via API
+- 🔊 AI responds via OpenAI Text-to-Speech (`tts-1-hd`)
+- 📱 Responsive, modern chat UI with rich feedback
+- 🛡️ Handles permission states and mic access gracefully
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 📦 Tech Stack
 
-### `npm test`
+- React + TypeScript
+- Web Speech API (Voice Input)
+- OpenAI TTS (Voice Output)
+- Fetches responses from FastAPI backend ([pdf-chatbot](https://github.com/your-org/pdf-chatbot))
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🚀 Setup Instructions
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 1. Clone the repo and install dependencies
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+bash
+git clone <your-frontend-repo-url> voice-chat-assistant
+cd voice-chat-assistant
+npm install
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Configure API Key
+Create a .env file in the root:
+REACT_APP_OPENAI_API_KEY=sk-xxxxxx  # Your OpenAI API Key
 
-### `npm run eject`
+3. Start the backend
+Make sure the backend server (pdf-chatbot) is running on http://localhost:8000. See backend setup https://github.com/anoopbajpaipublic/pdf-chatbot
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+uvicorn server:app --reload
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. Start the React app
+npm start
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+By default, the app runs on http://localhost:3001
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+🧪 Test Voice + Text Chat
+Ask a question by typing or speaking (e.g., "What recipes use coconut milk?")
 
-## Learn More
+The bot will respond with a short text and speak the answer.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+You can mute the audio or stop AI speech at any time.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+⚠️ Browser Requirements
+Microphone access requires HTTPS or localhost
+
+Best supported in Chrome and Edge
+
+🛠 Scripts
+bash
+
+npm start      # Runs on http://localhost:3001
+npm run build  # Production build
+npm test       # Run tests
+
+📂 Folder Structure  
+
+voice-chat-assistant/
+
+├── public/
+
+├── src/
+
+│   └── ChatBot.tsx
+
+├── .env
+
+├── package.json
+
+└── README.md
+
+📖 License
+MIT or Custom License
+
