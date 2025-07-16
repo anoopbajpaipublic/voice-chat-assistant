@@ -70,11 +70,17 @@ npm test       # Run tests
 voice-chat-assistant/
 
 ├── public/
+
 ├── src/
+
 │   └── ChatBot.tsx
+
 ├── .env
+
 ├── package.json
+
 └── README.md
+
 📖 License
 MIT or Custom License
 
